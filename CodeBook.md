@@ -74,9 +74,11 @@ large number of single measurements taken of that type.
 
 we underline following criteria adopted by Tfinal:
 
-1)	EACH VARIABLE FORMS A COLUMN
-2)	EACH OBSERVATION FORMS A ROW BY SUBJECT (IN NUM. ORDER)
-3)	SAME OBSERVATION TYPEs (ACTIVITIES) ARE GROUPED by SUBJECT  
+1)	EACH VARIABLE FORMS A COLUMN;
+
+2)	EACH OBSERVATION FORMS A ROW BY SUBJECT (IN NUM. ORDER);
+
+3)	SAME OBSERVATION TYPEs (ACTIVITIES) ARE GROUPED by SUBJECT.  
 
 ===============================================================================================================
 EoF/by mario :)
