@@ -125,23 +125,23 @@ Script now selects the relevant "features" (such contaning the word "mean" or "s
 Script will now apply descriptions:
 
 seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
-        > for (k in 1:2947) 
-        > if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
+    for (k in 1:2947) 
+    if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
 -----------------------------------------------------------------------------------------------------------------------
 
 
 ###**TRAIN DATA SECTION**
-####(same as TEST DATA SECTION, som many comments omitted)
+#####(same as TEST DATA SECTION, so many comments omitted)
 
 Script is starting with reading "train/X_train.txt" directory into a variable t2 and looking at it
 
@@ -210,8 +210,8 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 ###**OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS**
 
-#### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
-#### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
+##### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
+##### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
 
 	mergedd <- rbind(seltbs2,seltbs)
 
