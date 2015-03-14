@@ -4,7 +4,7 @@ Coursera Getting and Cleaning Data Course Project
 
 ####**EXPLANATION HOW SCRIPT WORKS:**
 
-Files were downloaded and unzipped locally in order to preliminary examining them offline.
+Files were downloaded and unzipped locally, in order to preliminary examining them offline.
 Therefore script may work only insofar those files are in the local Directory:
 "F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset" or in Directory of yours where such file have been 
 unzipped and saved 
