@@ -1,15 +1,15 @@
-# run_analysis
+### run_analysis
 Coursera Getting and Cleaning Data Course Project
-#**HUMAN ACTIVITY RECOGNITION**
+###**HUMAN ACTIVITY RECOGNITION**
 
-##**EXPLANATION HOW SCRIPY WORKS:**
+####**EXPLANATION HOW SCRIPY WORKS:**
 
 Files were downloaded and unzipped locally in order to preliminary examining them offline.
 Therefore script may work only insofar those files are in the local Directory:
 "F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset" or in Directory of yours where such file have been 
 unzipped and saved 
 
-#TEST DATA SECTION
+####TEST DATA SECTION
 
 Script starts with reading "test/X_test.txt" directory into a variable xt and looking at it
 
@@ -43,7 +43,7 @@ Then Script opens "dplyr"
 	str(tb)
 	dim(tb) [1] 2947  (562 this is consistant having added a column of activities as first column)
 
-##**DATA FRAME DESCRIPTION (tb)** 
+####**DATA FRAME DESCRIPTION (tb)** 
 
 	"tb" is a data.frame (test) which first column is "activity" and following 561 columns are meaurements (properly said
 	"features"). About the individuals who volunteered the partecipation to test we know they are a subset (30%) of the
@@ -58,12 +58,12 @@ Script now reads the identification list of such partecipants to test in file "t
 
 Script now applys such "subject identification codes" as first column of our dataset (tb) obtaining (tbs)
 
-##**DATA FRAME DESCRIPTION (tbs)** 
+####**DATA FRAME DESCRIPTION (tbs)** 
 
         "tbs" is a data.frame (test) which first column is the individual subject, the second column
         the "activity" num codes and following 561 columns are "features"
         
-##**EXTRACTING RELEVANT FEATURES ("MEAN" "STD")**
+####**EXTRACTING RELEVANT FEATURES ("MEAN" "STD")**
 
         Assignement requestS to extract only measurements of the mean and std for "each" measurement.     
         By analizing the "features.txt". Utilizing a simple txt editor we find following fields contain the word "mean" or "std" 
@@ -89,7 +89,7 @@ Script now applys such "subject identification codes" as first column of our dat
 
 Script will read the features file and extract to a variable "self" only (and all) rows which contain the word "mean" or "std"
 
-##**ABOUT NAMES OF THE VARIABLES:**
+####**ABOUT NAMES OF THE VARIABLES:**
 
         Assignment ask to " Appropriately label the Data set with descriptive variable names" and in other chapter, 
         to prepare...tidy data to be used in later analisys. I decided to leave them as they are for the moment and use
@@ -101,9 +101,9 @@ Script will read the features file and extract to a variable "self" only (and al
 	self<- f[c((1:6),(41:46),(81:86), (121:126), (161:166), (201:202), (214:215), (227:228), (266:271), 
 			(345:350), (424:429), (503:504), (516:517), (529:530), (542:543)),]
        
-##**EXTRACTING "mean" and "std" ALL AND ONLY COLUMNS OUT OF THE DATA.FRAME (tbs)**
+####**EXTRACTING "mean" and "std" ALL AND ONLY COLUMNS OUT OF THE DATA.FRAME (tbs)**
 
-##**DATA FRAME DESCRIPTION (tbs)** 
+####**DATA FRAME DESCRIPTION (tbs)** 
 
         "tbs" is a data.frame (test) which first column is the individual "SUBJECT", the second column
         the "ACTIVITY" num codes and following 561 columns are "features"
@@ -116,7 +116,7 @@ Script now selects the relevant "features" (such contaning the word "mean" or "s
 	self$V2<- as.character(self$V2)
 	names(seltbs)<-as.vector(c("SUBJECT", "ACTIVITY", self$V2))
 
-##**DATA FRAME DESCRIPTION (seltbs) (i.e. selected tbs)**
+####**DATA FRAME DESCRIPTION (seltbs) (i.e. selected tbs)**
 
         "seltbs" is a data.frame (test) which first column is the individual "SUBJECT", the second column
         the "ACTIVITY" num codes and following columns are related to "mean" or "std"
@@ -140,8 +140,8 @@ seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
 -----------------------------------------------------------------------------------------------------------------------
 
 
-#**TRAIN DATA SECTION**
-##(same as TEST DATA SECTION, som many comments omitted)
+###**TRAIN DATA SECTION**
+####(same as TEST DATA SECTION, som many comments omitted)
 
 Script is starting with reading "train/X_train.txt" directory into a variable t2 and looking at it
 
@@ -169,7 +169,7 @@ Script now uses the specifc dplyr format for data.frames
 	tb2<- cbind (yt2,xt2)
 	dim(tb2)  [1] 7352  (562 this is consistant having added a column of activities as first column)
 
-##**DATA FRAME DESCRIPTION (tb2)** 
+####**DATA FRAME DESCRIPTION (tb2)** 
 	"tb2" is a data.frame (train) which first column is "activity" and following 561 columns are meaurements (properly said
 	"features")
 
@@ -187,19 +187,19 @@ Script applies such "subject identification codes" as first column of our datase
 	tbs2<- cbind (st2,tb2)
 	dim (tbs2)
 
-##**DATA FRAME DESCRIPTION (tbs2)**
+####**DATA FRAME DESCRIPTION (tbs2)**
 
 	"tbs2" is a data.frame (train) which first column is the individual subject, the second column
 	the "activity" num codes and following 561 columns are "features"
 
-##**EXTRACTING "mean" and "std" ALL AND ONLY COLUMNS OUT OF THE DATA.FRAME (tbs2)**
+####**EXTRACTING "mean" and "std" ALL AND ONLY COLUMNS OUT OF THE DATA.FRAME (tbs2)**
 
 	seltbs2<- tbs2[, c((1:8),(43:48),(83:88), (123:128), (163:168), (203:204), (216:217), (229:230), (268:273), 
 			 (347:352), (426:431), (505:506), (518:519), (531:532), (544:545)),]
 	self$V2<- as.character(self$V2)
 	names(seltbs2)<-as.vector(c("SUBJECT", "ACTIVITY", self$V2))
 
-##**DATA FRAME DESCRIPTION (seltbs2) (i.e. selected tbs2)**
+####**DATA FRAME DESCRIPTION (seltbs2) (i.e. selected tbs2)**
 
 	"seltbs2" is a data.frame (train) which first column is the individual "SUBJECT", the second column
 	the "ACTIVITY" num codes and following columns are related to "mean" or "std"
@@ -208,10 +208,10 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 ---------------------------------------------------------------------------------------------------------------------
 
-#**OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS**
+###**OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS**
 
-##THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
-##FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
+####THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
+####FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
 
 	mergedd <- rbind(seltbs2,seltbs)
 
@@ -221,8 +221,8 @@ Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
 	
 ----------------------------------------------------------------------------------------------------------------------
 
-#**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
-##WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
+###**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
+####WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
 As this final set is "independent" and (sortmergedd) contains 64 different features, I decided to utilize
 for the final set just first feature I arbitrarly consider to be basic features, in order to make such final set
@@ -274,7 +274,7 @@ SAVE (Tfinal) as .txt file
 	
 --------------------------------------------------------------------------------------------------------------
 	
-#**FINAL NOTE**
+###**FINAL NOTE**
 
 I CONSIDER THIS DATA SET TIDY AS:
 
