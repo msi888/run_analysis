@@ -126,8 +126,8 @@ Script will now apply descriptions:
 
 seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
     for (k in 1:2947); if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
-    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
-    ...... (et seq)
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}......
+    
 -----------------------------------------------------------------------------------------------------------------------
 
 
