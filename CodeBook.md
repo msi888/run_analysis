@@ -32,17 +32,17 @@ tGravityAcc-std (for each -XYZ types)
 In details, selected features for our Tfinal were:
 
 1.  tBodyAcc-mean()-X,		(simplified name adopted:  BAccmX
-2.  tBodyAcc-mean()-Y,    BAccmY 
-3.  tBodyAcc-mean()-Z,    BAccmZ 
-4.  tBodyAcc-std()-X,                                       BAccsX 
-5.  tBodyAcc-std()-Y,                                       BAccsY
-6.  tBodyAcc-std()-Z,                                       BAccsZ
-7.  tGravityAcc-mean()-X,                                   GAccmX
-8.  tGravityAcc-mean()-Y,                                   GAccmY
-9.  tGravityAcc-mean()-Z,                                   GAccmZ
-10. tGravityAcc-std()-X,                                    GAccsX
-11. tGravityAcc-std()-Y,                                    GAccsY
-12. tGravityAcc-std()-Z,                                    GAccsZ
+2.  tBodyAcc-mean()-Y,   == BAccmY 
+3.  tBodyAcc-mean()-Z,    == BAccmZ 
+4.  tBodyAcc-std()-X,        ==  BAccsX 
+5.  tBodyAcc-std()-Y,          ==  BAccsY
+6.  tBodyAcc-std()-Z,            ==  BAccsZ
+7.  tGravityAcc-mean()-X,          ==  GAccmX
+8.  tGravityAcc-mean()-Y,            ==  GAccmY
+9.  tGravityAcc-mean()-Z,              ==  GAccmZ
+10. tGravityAcc-std()-X,                 ==  GAccsX
+11. tGravityAcc-std()-Y,                   ==  GAccsY
+12. tGravityAcc-std()-Z,                     ==  GAccsZ
 
 (please note that into semplified names (m) means mean, (s) means std)
 
