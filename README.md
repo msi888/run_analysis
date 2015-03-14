@@ -2,7 +2,7 @@
 Coursera Getting and Cleaning Data Course Project
 ###**HUMAN ACTIVITY RECOGNITION**
 
-####**EXPLANATION HOW SCRIPY WORKS:**
+####**EXPLANATION HOW SCRIPT WORKS:**
 
 Files were downloaded and unzipped locally in order to preliminary examining them offline.
 Therefore script may work only insofar those files are in the local Directory:
@@ -125,18 +125,12 @@ Script now selects the relevant "features" (such contaning the word "mean" or "s
 Script will now apply descriptions:
 
 seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
-    for (k in 1:2947) 
-    if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
+    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
 -----------------------------------------------------------------------------------------------------------------------
 
 
@@ -208,7 +202,8 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 ---------------------------------------------------------------------------------------------------------------------
 
-###**OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS**
+###**OBTAIN THE MERGED DATA SET** 
+####  BY BINDIG TEST AND TRAIN DATASETS
 
 ##### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
 ##### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
