@@ -65,7 +65,7 @@ Script now applys such "subject identification codes" as first column of our dat
         
 ####**EXTRACTING RELEVANT FEATURES ("MEAN" "STD")**
 
-        Assignement requestS to extract only measurements of the mean and std for "each" measurement.     
+        Assignement requestS to extract only measurements of the mean and std for *"each"* measurement.     
         By analizing the "features.txt". Utilizing a simple txt editor we find following fields contain the word "mean" or "std" 
 
         -   1 tBodyAcc-mean()-X ,2 tBodyAcc-mean()-Y, 3 tBodyAcc-mean()-Z, 4 tBodyAcc-std()-X, 5 tBodyAcc-std()-Y, 6 tBodyAcc-std()-Z
@@ -215,11 +215,10 @@ Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
 ###**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
 #### WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
-As this final set is "independent" and (sortmergedd) contains 64 different features, I decided to utilize
-for the final set just first feature I arbitrarly consider to be basic features, in order to make such final set
-of data readable and manageable; of course if wanted by the Client the process can be iterated to all the 64 features
+As this final set is "independent" and (sortmergedd) contains still all the 64 different mean - std features, *I decided to utilize for the final set just feature I consider to be the basic features (as supplied directly by the accelerometer and by
+the gyroscope; everything else seems to have been thereafter derived*. This also in order to make such final set of data more readable and manageable; of course if wanted by the Client the same process can be iterated to all the 64 features.
 
-	selected were: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
+	selected were therefore: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
 					 tBodyAcc-std()-X,tBodyAcc-std()-Y,tBodyAcc-std()-Z
 					 tGravityAcc-mean()-X,tGravityAcc-mean()-Y,tGravityAcc-mean()-Z
 					 tGravityAcc-std()-X,tGravityAcc-std()-Y,tGravityAcc-std()-Z
