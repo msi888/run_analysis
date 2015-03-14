@@ -215,8 +215,7 @@ Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
 ###**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
 #### WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
-As this final set is "independent" and (sortmergedd) contains still all the 64 different mean - std features, **I decided to utilize for the final set just feature I consider to be the basic features (as supplied directly by the accelerometer and by
-the gyroscope; everything else seems to have been thereafter derived**. This also in order to make such final set of data more readable and manageable; of course if wanted by the Client the same process can be iterated to all the 64 features.
+As this final set is "independent" and (sortmergedd) contains still all the 64 different mean - std features, **I decided to utilize for the final set just those features I consider to be basic features (the only which seem having supplied directly by the accelerometer)**. This also in order to make such final set of data more readable and manageable; of course, if wanted, the very same process can be iterated to all the 64 features.
 
 	selected were therefore: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
 					 tBodyAcc-std()-X,tBodyAcc-std()-Y,tBodyAcc-std()-Z
