@@ -49,7 +49,7 @@ dim(tb) ## [1] 2947  562 this is consistant having added a column of activities 
         ##  "features")
 
         ## About the individuals who volunteered the partecipation to test we know thy are a subset (30%) of the
-        ## total n° 30 participants; lets read the identification list of such partecipants to test
+        ## total nÂ° 30 participants; lets read the identification list of such partecipants to test
         ## in file "test/subject_test.txt"
 
 st<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/test/subject_test.txt", header = F, sep = "", quote = "",
@@ -71,7 +71,7 @@ dim (tbs)
 ## EXTRACTING RELEVANT FEATURES ("MEAN" "STD")
 
         ## the Assignement requestS to extract only measurements of the mean and std for "each" measurement.    
-        ## by analizing the "features.txt". Utilizing a simple txt editor we find following fields contain the word "mean" or "std" 
+        ## by analizing the "features.txt", we find following fields contain the word "mean" or "std" 
 
         ## 1 tBodyAcc-mean()-X ,2 tBodyAcc-mean()-Y, 3 tBodyAcc-mean()-Z, 4 tBodyAcc-std()-X, 5 tBodyAcc-std()-Y, 6 tBodyAcc-std()-Z
         ## 41 tGravityAcc-mean()-X, 42 tGravityAcc-mean()-Y, 43 tGravityAcc-mean()-Z, 44 tGravityAcc-std()-X, 45 tGravityAcc-std()-Y, 46 tGravityAcc-std()-Z
@@ -170,7 +170,7 @@ dim(tb2) ## [1] 7352  562 this is consistant having added a column of activities
 ###  "features")
 
 ### About the individuals who volunteered the partecipation to "train" we know thy are a subset (70%) of the
-### total n° 30 participants; lets read the identification list of such partecipants to test
+### total nÂ° 30 participants; lets read the identification list of such partecipants to test
 ### in file "train/subject_train.txt"
 
 st2<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/train/subject_train.txt", header = F, sep = "", quote = "",
@@ -220,7 +220,7 @@ for (k in 1:7352)
 
 ### OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS
 ### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
-### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
+### FIRST TWO COLUMNS ARE SUBJECT (THE NÂ° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
 
 mergedd <- rbind(seltbs2,seltbs)
 
