@@ -44,7 +44,7 @@ In details, selected features for our Tfinal were:
 11. tGravityAcc-std()-Y                                    GAccsY
 12. tGravityAcc-std()-Z                                    GAccsZ
 
-(please note that into semplified namas (m) means mean, (s) means std)
+(please note that into semplified names (m) means mean, (s) means std)
 
 ####**Tfinal structure**
 ================
