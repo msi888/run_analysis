@@ -65,7 +65,7 @@ Script now applys such "subject identification codes" as first column of our dat
         
 ####**EXTRACTING RELEVANT FEATURES ("MEAN" "STD")**
 
-        Assignement requestS to extract only measurements of the mean and std for **each** measurement.     
+        Assignement requestS to extract only measurements of the mean and std for EACH measurement.     
         By analizing the "features.txt". Utilizing a simple txt editor we find following fields contain the word "mean" or "std" 
 
         -   1 tBodyAcc-mean()-X ,2 tBodyAcc-mean()-Y, 3 tBodyAcc-mean()-Z, 4 tBodyAcc-std()-X, 5 tBodyAcc-std()-Y, 6 tBodyAcc-std()-Z
