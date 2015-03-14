@@ -127,10 +127,7 @@ Script will now apply descriptions:
 seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
     for (k in 1:2947); if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
     for (k in 1:2947); if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
-    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
-    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
-    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
-    for (k in 1:2947); if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
+    ...... (et seq)
 -----------------------------------------------------------------------------------------------------------------------
 
 
@@ -202,8 +199,7 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 ---------------------------------------------------------------------------------------------------------------------
 
-###**OBTAIN THE MERGED DATA SET** 
-####  BY BINDIG TEST AND TRAIN DATASETS
+###**OBTAIN THE MERGED DATA SET by binding TEST and TRAIN Datasets**
 
 ##### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
 ##### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
