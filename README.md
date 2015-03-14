@@ -125,18 +125,18 @@ Script now selects the relevant "features" (such contaning the word "mean" or "s
 Script will now apply descriptions:
 
 seltbs$ACTIVITY<- as.character(seltbs$ACTIVITY)
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
-        for (k in 1:2947) 
-        if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "5") {seltbs$ACTIVITY[k] <- "STANDING"}
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "4") {seltbs$ACTIVITY[k] <- "SITTING"}
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "3") {seltbs$ACTIVITY[k] <- "W_DOWN"}
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "2") {seltbs$ACTIVITY[k] <- "W_UP"}
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "6") {seltbs$ACTIVITY[k] <- "LAYING"}
+        > for (k in 1:2947) 
+        > if (seltbs$ACTIVITY [k] == "1") {seltbs$ACTIVITY[k] <- "WALKING"}
 -----------------------------------------------------------------------------------------------------------------------
 
 
@@ -210,8 +210,8 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 ###**OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS**
 
-####THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
-####FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
+#### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
+#### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
 
 	mergedd <- rbind(seltbs2,seltbs)
 
@@ -222,7 +222,7 @@ Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
 ----------------------------------------------------------------------------------------------------------------------
 
 ###**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
-####WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
+#### WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
 As this final set is "independent" and (sortmergedd) contains 64 different features, I decided to utilize
 for the final set just first feature I arbitrarly consider to be basic features, in order to make such final set
