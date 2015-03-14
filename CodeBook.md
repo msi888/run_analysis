@@ -14,7 +14,7 @@ activityrecognition '@' smartlab.ws
 
 Dataset Tfinal is part of assignements in Coursera/Johns Hopkins U MOOC "Getting and Cleaning Data"
 
-**Feature Selection** 
+####**Feature Selection** 
 =================
 
 The features selected for the source original UCI's database (containing more tha 10.000 observations of 561 
@@ -46,7 +46,7 @@ In details, selected features for our Tfinal were:
 
 (please note that into semplified namas (m) means mean, (s) means std)
 
-**Tfinal structure**
+####**Tfinal structure**
 ================
 Tfinal is a .txt file to be read with read.table in R programme, that should return a data.frame (dim 180 observations x 14 variables)
 
@@ -69,7 +69,7 @@ large number of single measurements taken of that type.
 (mean: Mean value)
 (std: Standard deviation)
 
-**FINAL NOTE**
+####**FINAL NOTE**
 ==========
 
 we underline following criteria adopted by Tfinal:
