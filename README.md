@@ -206,9 +206,9 @@ Script now applies ACTIVITY descriptions instead of num codes as first column of
 
 	mergedd <- rbind(seltbs2,seltbs)
 
-Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
+Script now ARRANGE (mergedd) by ACTIVITY and by SUBJECT in asc. order
 
-	sortedmergedd<- arrange(mergedd, SUBJECT, ACTIVITY)
+	sortedmergedd<- arrange(mergedd, ACTIVITY, SUBJECT)
 	
 ----------------------------------------------------------------------------------------------------------------------
 
@@ -219,7 +219,7 @@ As this final set is "independent" and (sortmergedd) contains still all the 64 d
 I decided to utilize for the final set just those features I consider to be basic features 
 (the only which seem having supplied directly by the accelerometer). This also in order to make such final set of data 
 more readable and manageable 
-Of course, if wanted, the same process can be iterated to all the 66 features.
+Of course, if wanted, the same process can be iterated to all the features.
 
 	selected were therefore: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
 					 tBodyAcc-std()-X,tBodyAcc-std()-Y,tBodyAcc-std()-Z
@@ -238,11 +238,11 @@ Script proceeds by CHANGING NAMES TO MORE COMPACT (but still meaningful) FORMAT:
              GAccmX,GAccmY,GAccmZ
              GAccsX,GAccsY,GAccsZ
 
-		cnames<- c("SUBJECT", "ACTIVITY","BAccmX","BAccmY","BAccmZ",
+	 cnames<- c("SUBJECT", "ACTIVITY","BAccmX","BAccmY","BAccmZ",
 			   "BAccsX","BAccsY","BAccsZ",
 			   "GAccmX","GAccmY","GAccmZ",
 			   "GAccsX","GAccsY","GAccsZ" )
-		colnames(final)<-cnames
+         colnames(final)<-cnames
 		
 Script proceeds as follows:
 GROUP DATA BY SUBJECT, ACTIVITY and CALCULATE MEAN OF EACH FEATURE COLUMN
@@ -253,15 +253,15 @@ SAVE (Tfinal) as .txt file
 
 	Tfinal<-summarize(tidyfinal, BAccmX=mean(BAccmX),
 		  BAccmY=mean(BAccmY),
-		  BAccmZ=mean(BAccmZ) ,
-		  BAccsX=mean(BAccsX)  ,
-		  BAccsY=mean(BAccsY)   ,
-		  BAccsZ=mean(BAccsZ)    ,
-		  GAccmX=mean(GAccmX)     ,
-		  GAccmY=mean(GAccmY)      ,
-		  GAccmZ=mean(GAccmZ)       ,
-		  GAccsX=mean(GAccsX)        ,
-		  GAccsY=mean(GAccsY)         ,
+		  BAccmZ=mean(BAccmZ),
+		  BAccsX=mean(BAccsX),
+		  BAccsY=mean(BAccsY),
+		  BAccsZ=mean(BAccsZ),
+		  GAccmX=mean(GAccmX),
+		  GAccmY=mean(GAccmY),
+		  GAccmZ=mean(GAccmZ),
+		  GAccsX=mean(GAccsX),
+		  GAccsY=mean(GAccsY),
 		  GAccsZ=mean(GAccsZ))
 
 	write.table(Tfinal, row.name=F, file="F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/Tfinal.txt")
@@ -273,10 +273,12 @@ SAVE (Tfinal) as .txt file
 I CONSIDER THIS DATA SET TIDY as:
 
 1.	EACH VARIABLE FORMS A COLUMN
+
 2.	EACH OBSERVATION FORMS A ROW BY SUBJECT (IN NUM. ORDER)
+
 3.	SAME OBSERVATION TYPES (ACTIVITIES) ARE GROUPED by SUBJECT  
 
-OF COURSE OTHER TYPE OF ARRANGEMENT ARE POSSIBLE
+
 
 ===============================================================================================================
 EoF/by mario
