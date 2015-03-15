@@ -215,17 +215,20 @@ Script now ARRANGE (mergedd) by SUBJECT and by ACTIVITY in asc. order
 ###**PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET"** 
 #### WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
-As this final set is "independent" and (sortmergedd) contains still all the 64 different mean - std features, **I decided to utilize for the final set just those features I consider to be basic features (the only which seem having supplied directly by the accelerometer)**. This also in order to make such final set of data more readable and manageable; of course, if wanted, the very same process can be iterated to all the 64 features.
+As this final set is "independent" and (sortmergedd) contains still all the 64 different mean - std features, 
+I decided to utilize for the final set just those features I consider to be basic features 
+(the only which seem having supplied directly by the accelerometer). This also in order to make such final set of data 
+more readable and manageable 
+Of course, if wanted, the same process can be iterated to all the 66 features.
 
 	selected were therefore: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
 					 tBodyAcc-std()-X,tBodyAcc-std()-Y,tBodyAcc-std()-Z
 					 tGravityAcc-mean()-X,tGravityAcc-mean()-Y,tGravityAcc-mean()-Z
 					 tGravityAcc-std()-X,tGravityAcc-std()-Y,tGravityAcc-std()-Z
 
-Script goes on by dropping in (sortedmergedd) the features I considered not necessary, creating a new (final) data frame.
-Actually just first fetures were taken for my "tidy" data, tus, judgementally and for sake of simplicity those given directly by
-te acelerometer device: 
-
+Script goes on by dropping in (sortedmergedd) the features I considered not necessary (as explained above) creating a new
+(final) data frame.
+ 
 	final<- sortedmergedd [, (1:14)]
         
 Script proceeds by CHANGING NAMES TO MORE COMPACT (but still meaningful) FORMAT: 
