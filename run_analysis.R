@@ -49,7 +49,7 @@ dim(tb) ## [1] 2947  562 this is consistant having added a column of activities 
         ##  "features")
 
         ## About the individuals who volunteered the partecipation to test we know thy are a subset (30%) of the
-        ## total n° 30 participants; lets read the identification list of such partecipants to test
+        ## total n? 30 participants; lets read the identification list of such partecipants to test
         ## in file "test/subject_test.txt"
 
 st<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/test/subject_test.txt", header = F, sep = "", quote = "",
@@ -69,10 +69,11 @@ dim (tbs)
         ##  the "activity" num codes and following 561 columns are "features"
         
 ## EXTRACTING RELEVANT FEATURES ("MEAN" "STD")
+f<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/features.txt", header = F, sep = "", quote = "",
+               na.strings = "NA")
 
-        ## the Assignement requestS to extract only measurements of the mean and std for "each" measurement.    
-        ## by analizing the "features.txt", we find following fields contain the word "mean" or "std" 
-
+        ## the Assignement requests to extract only measurements of the mean and std for "each" measurement.    
+        ## by analizing the features we found following fields contain the word "mean" or "std" 
         ## 1 tBodyAcc-mean()-X ,2 tBodyAcc-mean()-Y, 3 tBodyAcc-mean()-Z, 4 tBodyAcc-std()-X, 5 tBodyAcc-std()-Y, 6 tBodyAcc-std()-Z
         ## 41 tGravityAcc-mean()-X, 42 tGravityAcc-mean()-Y, 43 tGravityAcc-mean()-Z, 44 tGravityAcc-std()-X, 45 tGravityAcc-std()-Y, 46 tGravityAcc-std()-Z
         ## 81 tBodyAccJerk-mean()-X, 82 tBodyAccJerk-mean()-Y, 83 tBodyAccJerk-mean()-Z, 84 tBodyAccJerk-std()-X, 85 tBodyAccJerk-std()-Y, 86 tBodyAccJerk-std()-Z
@@ -88,16 +89,15 @@ dim (tbs)
         ## 516 fBodyBodyAccJerkMag-mean(), 517 fBodyBodyAccJerkMag-std()
         ## 529 fBodyBodyGyroMag-mean(), 530 fBodyBodyGyroMag-std()
         ## 542 fBodyBodyGyroJerkMag-mean(), 543 fBodyBodyGyroJerkMag-std()
-
         ## therefore following columns should be selected (1:6),(41:46),(81:86), (121:126), (161:166), (201:202), (214:215), (227:228), (266:271), 
         ## (345:350), (424:429), (503:504), (516:517), (529:530), (542:543)
 
-        ## let's read the features file and extract to a variable "self" only (and all) rows which contain the word "mean" or "std"
-
-f<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/features.txt", header = F, sep = "", quote = "",
-                na.strings = "NA")
+filtered_features_indexes <- (grepl("mean\\(\\)", f[,2]) | grepl("std\\(\\)", f[,2]))
+filtered_features_names <- as.character(f[filtered_features_indexes,2])
+View(filtered_features_names)
+(filtered_features_names)
 self<- f[c((1:6),(41:46),(81:86), (121:126), (161:166), (201:202), (214:215), (227:228), (266:271), 
-                (345:350), (424:429), (503:504), (516:517), (529:530), (542:543)),]
+(345:350), (424:429), (503:504), (516:517), (529:530), (542:543)),]
        
 ## EXTRACTING "mean" and "std" ALL AND ONLY COLUMNS OUT OF THE DATA.FRAME (tbs)
 ## DATA FRAME DESCRIPTION (tbs) 
@@ -106,7 +106,7 @@ self<- f[c((1:6),(41:46),(81:86), (121:126), (161:166), (201:202), (214:215), (2
         ##  the "ACTIVITY" num codes and following 561 columns are "features"
 
 seltbs<- tbs[, c((1:8),(43:48),(83:88), (123:128), (163:168), (203:204), (216:217), (229:230), (268:273), 
-                 (347:352), (426:431), (505:506), (518:519), (531:532), (544:545)),]
+(347:352), (426:431), (505:506), (518:519), (531:532), (544:545)),]
 
 head(seltbs) ## checks OK
 tail(seltbs) ## do
@@ -170,7 +170,7 @@ dim(tb2) ## [1] 7352  562 this is consistant having added a column of activities
 ###  "features")
 
 ### About the individuals who volunteered the partecipation to "train" we know thy are a subset (70%) of the
-### total n° 30 participants; lets read the identification list of such partecipants to test
+### total n? 30 participants; lets read the identification list of such partecipants to test
 ### in file "train/subject_train.txt"
 
 st2<- read.table("F:/JHU/2_GETTING AND CLEANING DATA/UCI HAR Dataset/train/subject_train.txt", header = F, sep = "", quote = "",
@@ -220,7 +220,7 @@ for (k in 1:7352)
 
 ### OBTAIN THE MERGED DATA SET BY BINDIG TEST AND TRAIN DATASETS
 ### THE DATA FRAME (mergedd) CONTAINS ALL AND ONLY FEATURES WHICH NAME INCLUDED MEAN OR STD
-### FIRST TWO COLUMNS ARE SUBJECT (THE N° OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
+### FIRST TWO COLUMNS ARE SUBJECT (THE N? OF THE INDIVIDUAL WHO VOLUNTEERR THE RESEARCH) AND ACTIVITY NAME)
 
 mergedd <- rbind(seltbs2,seltbs)
 
@@ -230,9 +230,10 @@ sortedmergedd<- arrange(mergedd, SUBJECT, ACTIVITY)
 #### ------------------------------------------------------------------------------------------------------------------
 #### PREPARING THE FINAL "INDEPENDENT (TIDY) DATA SET" WITH AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT 
 
-#### As this final set is "independent" and (sortmergedd) contains 64 different features, I decided to utilize
-#### for the final set just first feature I arbitrarly consider to be basic features, in order to make such final set
-#### of data readable and manageable; of course if wanted by the Client the process can be iterated to all the 64 features
+#### As this final "tidy" set must be "independent" and as variable (sortmergedd) still contains an large number (66) of different features
+#### I decided to include in my "tidy" just those features I can judgementally consider basic features, thus generated by the 
+#### directly by Accelerometer device.
+#### Of course the process can any be iterated to all the 66 features if needed by subsequent analysis
 
 #### selected were: tBodyAcc-mean()-X,tBodyAcc-mean()-Y,tBodyAcc-mean()-Z
 ####                tBodyAcc-std()-X,tBodyAcc-std()-Y,tBodyAcc-std()-Z
@@ -259,19 +260,19 @@ colnames(final)<-cnames
 #### OBTAIN A FINAL DATA SET FOR THE ASSIGNMENT COMPLETION (Tfinal)
 #### SAVE (Tfinal) as .txt file
 
-tidyfinal<-group_by(final, SUBJECT, ACTIVITY)
+tidyfinal<-group_by(final, ACTIVITY, SUBJECT)
 
 Tfinal<-summarize(tidyfinal, BAccmX=mean(BAccmX),
           BAccmY=mean(BAccmY),
-          BAccmZ=mean(BAccmZ) ,
-          BAccsX=mean(BAccsX)  ,
-          BAccsY=mean(BAccsY)   ,
-          BAccsZ=mean(BAccsZ)    ,
-          GAccmX=mean(GAccmX)     ,
-          GAccmY=mean(GAccmY)      ,
-          GAccmZ=mean(GAccmZ)       ,
-          GAccsX=mean(GAccsX)        ,
-          GAccsY=mean(GAccsY)         ,
+          BAccmZ=mean(BAccmZ),
+          BAccsX=mean(BAccsX),
+          BAccsY=mean(BAccsY),
+          BAccsZ=mean(BAccsZ),
+          GAccmX=mean(GAccmX),
+          GAccmY=mean(GAccmY),
+          GAccmZ=mean(GAccmZ),
+          GAccsX=mean(GAccsX),
+          GAccsY=mean(GAccsY),
           GAccsZ=mean(GAccsZ))
                   
 View(Tfinal)
