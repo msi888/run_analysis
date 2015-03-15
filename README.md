@@ -223,6 +223,8 @@ As this final set is "independent" and (sortmergedd) contains still all the 64 d
 					 tGravityAcc-std()-X,tGravityAcc-std()-Y,tGravityAcc-std()-Z
 
 Script goes on by dropping in (sortedmergedd) the features I considered not necessary, creating a new (final) data frame.
+Actually just first fetures were taken for my "tidy" data, tus, judgementally and for sake of simplicity those given directly by
+te acelerometer device: 
 
 	final<- sortedmergedd [, (1:14)]
         
@@ -274,4 +276,4 @@ I CONSIDER THIS DATA SET TIDY as:
 OF COURSE OTHER TYPE OF ARRANGEMENT ARE POSSIBLE
 
 ===============================================================================================================
-EoF/by mario :)
+EoF/by mario
